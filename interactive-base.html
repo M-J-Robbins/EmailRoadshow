@@ -1,0 +1,76 @@
+<!-- 
+  Insert this component in your email with the following code:
+  
+<interactive-base>
+    <fragment #slot="interactive"></fragment>
+    <fragment #slot="fallback"></fragment>
+</interactive-base>
+-->
+<script>
+  export const config = {
+    label: "interactive-base",
+    presets: [{
+      label: "interactive-base",
+      content: `<interactive-base>
+      <fragment #slot="interactive"></fragment>
+      <fragment #slot="fallback"></fragment></interactive-base>`
+    }]
+  }
+  export const slots = Component.defineSlots({
+    interactive: {
+      schema: Component.slots.any(),
+    },
+    fallback: {
+      schema: Component.slots.any(),
+    },
+  });
+  export const props = Component.defineProps({
+    outlookSupport: {
+      label: 'Include Outlook',
+      schema: Component.props.boolean().optional(),
+      type: 'switch',
+    }
+  });
+</script>
+<style #if="props.outlookSupport" #isolated="interactive">
+  input:checked ~ .wrapper .interactive-content{
+    display:block !important;
+  }
+  input:checked ~ .wrapper .fallback-content{
+    display:none;
+  }
+</style>
+<style #else #isolated="interactive">
+  #interactive:checked ~ .wrapper .interactive-content{
+    display:block !important;
+  }
+  #interactive:checked ~ .wrapper .fallback-content{
+    display:none;
+  }
+</style>
+<style #isolated="interactive">
+  input:checked~.wrapper .interactive-control {
+    display: inline-block !important;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    margin: 0 0 0 -9999px;
+    float: left;
+    position: absolute;
+    -webkit-appearance: none;
+  }
+</style>
+<template>
+  <!--[if mso]><!-->
+  <input type="radio" id="interactive" style="display:none;display:contents;mso-hide:all;" style="display:none;" checked>
+  <!--<![endif]-->
+  <div class="wrapper">
+    <div class="interactive-content" style="display:none">
+      <slot name="interactive">Interactive content goes here</slot>
+    </div>
+    <div class="fallback-content">
+      <slot name="fallback">Fallback content goes here</slot>
+    </div>
+  </div>
+</template>
