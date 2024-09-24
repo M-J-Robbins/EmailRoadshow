@@ -8,3 +8,4 @@ List of demos
 * [Image gallery- basic functionality](https://parcel.io/e/8b9e3aa7-f037-40ce-bf96-61be5a1be6ea?)
 * [Image gallery- full code](https://parcel.io/e/8b9e3aa7-f037-40ce-bf96-61be5a1be6ea?)
 * [Forms](https://parcel.io/e/c13ec2cf-43d7-47e6-a3e9-bd889a145492?)
+* [Interactive base component](/interactive-base.html)
