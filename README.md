@@ -1,5 +1,7 @@
 # EmailRoadshow
 
+[Slide deck](https://docs.google.com/presentation/d/1hNUzwUugXjeae3zgenAQGNTutiuUlR3yQLSdeSUjshg/edit?usp=sharing)
+
 List of demos
 * [Hover effect](https://parcel.io/e/a126b1a9-ea7d-46f0-b87a-55de37b9ab5a?)
 * [Methods of interactive code](https://parcel.io/e/17304e95-3842-4a57-878a-05c4b3a3f0a2?)
